@@ -1,0 +1,39 @@
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 16px;
+    background: white;
+}
+html.dark .modal{
+    border-color: rgb(49, 49, 49);
+    background: black;
+}
+
+.modal-header{
+    position: relative;
+    width: calc(100% - 8px);
+    height: 32px;
+    border-radius: 16px 16px 0 0;
+    padding: 4px;
+}
+
+.modal-header p{
+    margin: 4px;
+    text-align: center;
+    font-size: 18px;
+}
+.modal-header button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.modal-body{
+    padding: 24px;
+}

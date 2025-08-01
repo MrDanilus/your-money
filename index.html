@@ -7,6 +7,55 @@
     <title>YourMoney</title>
   </head>
 
+  <script>
+    // Theme management script
+    (function() {
+      try {
+        const saved = localStorage.getItem('vue-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.classList.add(saved);
+        } else {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.add(prefersDark ? 'dark' : 'light');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    html.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+    }
+    html.light {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      font-family: sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  </style>
+
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>

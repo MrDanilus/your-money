@@ -1,0 +1,43 @@
+form{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 12px;
+}
+form div{
+    display: grid;
+}
+
+label{
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px 6px;
+    outline: none;
+    background: transparent;
+}
+html.dark input, 
+html.dark textarea{
+    color: white;
+    border-color: white;
+}
+
+input[type=submit]{
+    border-width: 2px;
+    transition: all 0.25s ease-in-out;
+}
+input[type=submit]:hover{
+    background-color: black;
+    color: white;
+}
+html.dark input[type=submit]:hover{
+    background-color: white;
+    color: black;
+}
+
+html.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
